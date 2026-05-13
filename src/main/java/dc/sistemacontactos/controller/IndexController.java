@@ -26,4 +26,9 @@ public class IndexController {
         modelo.put("contactos", contactos);
         return "index";
     }
+
+    @GetMapping("/agregar")
+    public String mostraAgregar(){
+        return "agregar";
+    }
 }
