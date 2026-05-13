@@ -1,36 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <title>Sistema de contactos</title>
+<head th:replace="~{common/header::header-seccion(titulo='Inicio')}">
 </head>
+
 <body>
 <!--  NAVBAR  -->
-<div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">Contactos</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/agregar">Agregar Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    </nav>
-</div>
-
+<div th:replace="~{common/navbar::navbar-section}"/>
 <!--  TABLE  -->
 <div class="container">
     <div class="container text-center" style="margin:30px">
