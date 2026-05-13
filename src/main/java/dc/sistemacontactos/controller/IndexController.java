@@ -56,4 +56,12 @@ public class IndexController {
         contactoService.guardarContacto(contacto);
         return "redirect:/";
     }
+
+    @PostMapping("/eliminar/{id}")
+    public String eliminar(@PathVariable("id") Integer id){
+        Contacto contacto = contactoService.buscarContactoPorId(id);
+        logger.info("Contacto eliminado: " + contacto);
+        contactoService.eliminarContacto(contacto);
+        return "redirect:/";
+    }
 }
