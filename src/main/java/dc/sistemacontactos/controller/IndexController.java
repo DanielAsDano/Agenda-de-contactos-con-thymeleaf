@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -39,5 +40,13 @@ public class IndexController {
         logger.info("Contacto a agregar: " + contacto);
         contactoService.guardarContacto(contacto);
         return "redirect:/";
+    }
+
+    @GetMapping("/editar/{id}")
+    public String mostrarEditar(@PathVariable(value = "id") int idContacto, ModelMap modelo){
+        Contacto contacto = contactoService.buscarContactoPorId(idContacto);
+        logger.info("Contacto a editar: " + contacto);
+        modelo.put("contacto", contacto);
+        return "editar";
     }
 }
