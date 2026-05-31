@@ -7,35 +7,36 @@
 <!--  NAVBAR  -->
 <div th:replace="~{common/navbar::navbar-section}"/>
 
-<div class="container">
-    <div class="container text-center" style="margin:30px">
-        <h3>Editar Contacto</h3>
-    </div>
-
-    <div class="container">
-        <form action="/editar" th:object="${contacto}" method="post">
-            <input type="hidden" th:field="*{idContacto}">
-            <div class="mb-3">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required th:field="*{nombre}">
-            </div>
-            <div class="mb-3">
-                <label for="celular" class="form-label">Celular</label>
-                <input type="text" class="form-control" id="celular" name="celular" th:field="*{celular}">
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" th:field="*{email}">
-            </div>
-            <div class="text-center">
-                <button type="submit" class="btn btn-warning btn-sm me-3">Editar</button>
-                <a href="/" class="btn btn-danger btn-sm">Regresar</a>
-            </div>
-        </form>
+<!--  CONTENT  -->
+<div class="container" style="flex: 1 0 auto; display: flex; align-items: center; justify-content: center; padding: 2rem 0;">
+    <div style="width: 100%; max-width: 480px; margin: 0 auto;">
+        <div class="card-custom">
+            <h4 class="mb-4 text-center" style="font-weight: 700; letter-spacing: -0.02em;">Editar Contacto</h4>
+            
+            <form action="/editar" th:object="${contacto}" method="post">
+                <input type="hidden" th:field="*{idContacto}">
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control-custom" id="nombre" name="nombre" required th:field="*{nombre}" placeholder="Nombre completo">
+                </div>
+                <div class="mb-3">
+                    <label for="celular" class="form-label">Celular</label>
+                    <input type="text" class="form-control-custom" id="celular" name="celular" th:field="*{celular}" placeholder="Número de celular">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control-custom" id="email" name="email" th:field="*{email}" placeholder="correo@ejemplo.com">
+                </div>
+                <div class="d-flex justify-content-end gap-2">
+                    <a href="/" class="btn-custom btn-custom-secondary">Regresar</a>
+                    <button type="submit" class="btn-custom btn-custom-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
 <div th:replace="~{common/footer::footer-section}"/>
-1</body>
 
+</body>
 </html>
